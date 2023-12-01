@@ -52,21 +52,37 @@ header {
     border: 1px solid slategrey;
 }
 
+.console {
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    background-color: black;
+    font-family: 'Nova Square', sans-serif;
+    margin: 15px;
+    border-radius: 25px;
+    margin-left: 160px;
+    width: auto;
+    height: auto;
+    display: inline-grid;
+    grid-gap: 20px;
+}
+
 .resetScore, .scoreboard {
     background-color: transparent;
-    border: 3px solid darkslategrey;
+    border: 2px solid darkslategrey;
     font-family: 'Nova Square', sans-serif;
     color: lightgrey;
     font-size: 15px;
     padding: 8px 15px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    border-radius: 25px;
 }
 
 .resetScore:hover,.scoreboard:hover {
 
     transform: scale(1.1);
-    background-color: black;
+    background-color: rgb(25, 25, 25);
     box-shadow: 0 0 20px grey;
 
 }
