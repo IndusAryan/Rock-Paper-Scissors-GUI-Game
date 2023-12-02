@@ -20,3 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
         openURL('https://github.com/IndusAryan/Rock-Paper-Scissors-GUI-Game');
     })
 })
+
+function refreshScore() {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+}
+
+document.querySelector(".resetScore").addEventListener("click", refreshScore);
+
+document.querySelector(".exit").addEventListener("click", close());
