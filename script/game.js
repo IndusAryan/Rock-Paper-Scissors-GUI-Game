@@ -17,6 +17,7 @@ function cpuMove() {
     return cpusMove;
 }
 
+// when the player selects a move(start of game)
 function playGame(playerMove) {
     const cpusMove = cpuMove();
 
@@ -24,29 +25,31 @@ function playGame(playerMove) {
 
     if (playerMove === 'scissors') {
         if (cpusMove === 'rock') {
-            alert('You lose.');
+            result = ('Loser! Get TF outta here 👻')
         } else if (cpusMove === 'paper') {
-            alert('You win.');
+            result = ('You Win! 👑')
         } else if (cpusMove === 'scissors') {
-            alert('Tie');
+            result = ('Game Tied 💀')
         }
 
     } else if (playerMove === 'paper') {
         if (cpusMove === 'rock') {
-            alert('You win.');
+            result = ('You Win! 👑')
         } else if (cpusMove === 'paper') {
-            alert('Tie');
+            result = ('Game Tied 💀')
         } else if (cpusMove === 'scissors') {
-            alert('You lose.');
+            result = ('Loser! Get TF outta here 👻')
         }
 
     } else if (playerMove === 'rock') {
         if (cpusMove === 'rock') {
-            alert('Tie');
+            result = ('Game Tied 💀')
         } else if (cpusMove === 'paper') {
-            alert('You lose.');
+            result = ('Loser! Get TF outta here 👻')
         } else if (cpusMove === 'scissors') {
-            alert('You win.');
+            result = ('You Win! 👑')
         }
     }
+
+    document.querySelector('.resultStatus').innerHTML = result;
 }

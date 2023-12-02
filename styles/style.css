@@ -60,7 +60,7 @@ header {
     font-family: 'Nova Square', sans-serif;
     margin: 15px;
     border-radius: 25px;
-    margin-left: 160px;
+    margin-left: 400px;
     width: auto;
     height: auto;
     display: inline-grid;
@@ -158,8 +158,31 @@ header {
     margin-top: 50px;
 }
 
-.score {
-    margin-top: 60px;
+.dashboard {
+    display: flex;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scores {
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    background-color: black;
+    font-family: 'Nova Square', sans-serif;
+    border-radius: 25px;
+    margin: 0 20px;
+    height: auto;
+    margin-right: 350px;
+    width: 500px;
+}
+
+.resultStatus {
+
+    margin-top: 10px;
+
 }
 
 
