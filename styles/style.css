@@ -63,7 +63,8 @@ header {
     margin-left: 400px;
     width: auto;
     height: auto;
-    display: inline-grid;
+    display: inline-flex;
+    flex-direction: column;
     grid-gap: 20px;
 }
 
@@ -159,10 +160,10 @@ header {
 }
 
 .dashboard {
-    display: flex;
     width: auto;
-    height: auto;
+    height: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -175,8 +176,28 @@ header {
     border-radius: 25px;
     margin: 0 20px;
     height: auto;
+    display: flex;
     margin-right: 350px;
-    width: 500px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: 100%;
+}
+
+.movepicks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: auto;
+    margin-bottom: 2px;
+    height: 100%;
+}
+
+.moveofcpu, .moveofplayer {
+    align-items: flex-start;
+    margin-right: 20px;
+    margin-top: 2px;
 }
 
 .resultStatus {
