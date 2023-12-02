@@ -27,15 +27,15 @@
 <div class="moves">
 
 <button class="move-button rock-button" onclick="playGame('rock');">
-  <img src="assets/moai-svgrepo-com.png" class="move-icon">
+  <img src="assets/rock.png" class="move-icon">
 </button>
 
 <button class="move-button paper-button"  onclick="playGame('paper');">
-  <img src="assets/scroll-svgrepo-com.png" class="move-icon">
+  <img src="assets/paper.png" class="move-icon">
 </button>
 
 <button class="move-button scissors-button" onclick="playGame('scissors');">
-  <img src="assets/crossed-swords-svgrepo-com.png" class="move-icon" alt="Sword">
+  <img src="assets/scissors.png" class="move-icon" alt="Sword">
 </button>
 
 </div>
@@ -53,6 +53,16 @@
     <div class="scores">
       <p>🌟Board</p>
       <p class="resultStatus">...</p>
+      <p>-</p>
+
+      <div class="movepicks">
+      <p>CPU's Move</p>
+      <img class="moveofcpu" src="" style="max-height: 24px; max-width: 24px;">
+        <p>You Picked</p>
+        <img class="moveofplayer" src="" style="max-height: 24px; max-width: 24px;">
+      </div>
+      <p>-</p>
+      <p class="stats score"></p>
 
     </div>
 
@@ -70,7 +80,7 @@
 </footer>
 
   <p class="github">GitHub</p>
-  <img class="githubico" src="assets/github-svgrepo-com.png" alt="Repo">
+  <img class="githubico" src="assets/github.png" alt="Repo">
 
 </div>
 
