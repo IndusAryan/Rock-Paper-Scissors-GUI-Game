@@ -32,15 +32,21 @@
 
 <div class="moves">
 
-<button class="move-button rock-button" onclick="playGame('rock');">
+<button class="move-button rock-button" data-sound="rock" onclick="setTimeout(function() {
+        playGame('rock');
+    }, 1000);">
   <img src="assets/rock.png" class="move-icon">
 </button>
 
-<button class="move-button paper-button"  onclick="playGame('paper');">
+<button class="move-button paper-button" data-sound="paper" onclick="setTimeout(function() {
+        playGame('paper');
+    }, 1000);">
   <img src="assets/paper.png" class="move-icon">
 </button>
 
-<button class="move-button scissors-button" onclick="playGame('scissors');">
+<button class="move-button scissors-button" data-sound="sword" onclick="setTimeout(function() {
+        playGame('scissors');
+    }, 1000);">
   <img src="assets/scissors.png" class="move-icon" alt="Sword">
 </button>
 
@@ -51,8 +57,8 @@
 <div class="console">
 
   <p>🎮 Console</p>
-<button class="resetScore">Reset Score</button>
-<button class="theme" id="theme">Change theme</button>
+<button class="resetScore" data-sound="themeChange">Reset Score</button>
+<button class="theme" id="theme" data-sound="themeChange">Change theme</button>
 
 
 </div>
@@ -91,7 +97,4 @@
   <img class="githubico" src="assets/github.png" alt="Repo">
 
 </div>
-
-
-
 </html>
