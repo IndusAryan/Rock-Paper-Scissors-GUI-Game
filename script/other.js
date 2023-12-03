@@ -29,6 +29,45 @@ function refreshScore() {
     updateScoreElement();
 }
 
+
 document.querySelector(".resetScore").addEventListener("click", refreshScore);
 
-document.querySelector(".exit").addEventListener("click", close());
+document.addEventListener('DOMContentLoaded', function () {
+    var themeToggleBtn = document.querySelector('.theme');
+
+    // Store the original background color
+    var originalBackgroundColor = getComputedStyle(document.body).backgroundColor;
+
+    themeToggleBtn.addEventListener('click', function () {
+        toggleTheme();
+    });
+
+    function toggleTheme() {
+        // Get the current background color
+        var currentColor = document.body.style.backgroundColor;
+
+        // If the current color is not set, use the original color
+        if (!currentColor || currentColor === 'rgb(25, 25, 25)' || currentColor === 'transparent') {
+            document.body.style.backgroundColor = '#333';
+            document.body.style.color = '#f0f0f0';
+        } else {
+            // Toggle between the original color and the alternative color
+            document.body.style.backgroundColor = (currentColor === originalBackgroundColor) ? '#f0f0f0' : originalBackgroundColor;
+            document.body.style.color = (currentColor === originalBackgroundColor) ? '#333' : '#f0f0f0';
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var animationContainer = document.querySelector('.animation-container');
+
+    // Show the animation
+    animationContainer.style.opacity = '1';
+    animationContainer.style.pointerEvents = 'wait';
+
+    // Hide the animation after 2 seconds
+    setTimeout(function() {
+        animationContainer.style.opacity = '0';
+        animationContainer.style.pointerEvents = 'none';
+    }, 1000);
+});
