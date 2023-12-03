@@ -61,9 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function() {
     var animationContainer = document.querySelector('.animation-container');
 
+    function playSounds() {
+        var audio = new Audio('assets/begin.wav');
+        audio.play();
+    }
+
     // Show the animation
     animationContainer.style.opacity = '1';
     animationContainer.style.pointerEvents = 'wait';
+    playSounds();
+
 
     // Hide the animation after 2 seconds
     setTimeout(function() {
