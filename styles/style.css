@@ -251,6 +251,13 @@ footer {
     margin-top: 2px;
 }
 
+@media (max-width: 768px) {
+    .moviepicks,.moveofcpu, .moveofplayer {
+        font-size: 0.3rem;
+        margin-top: 10px;
+    }
+}
+
 .resultStatus {
     margin-top: 10px;
 }

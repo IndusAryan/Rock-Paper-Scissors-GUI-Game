@@ -5,15 +5,20 @@ function cpuMove() {
 
     const chance = Math.random();
     var cpusMove = '';
+    var moveofcpuImage = document.querySelector('.moveofcpu');
 
     if (chance >= 0 && chance < 1 / 3) {
         cpusMove = 'rock';
+        moveofcpuImage.src = 'assets/rock.png';
+
     } else if (chance >= 1 / 3 && chance < 2 / 3) {
         cpusMove = 'paper';
-    } else if (chance >= 2 / 3 && chance < 1) {
-        cpusMove = 'scissors';
-    }
+        moveofcpuImage.src = 'assets/paper.png';
 
+    } else if (chance >= 2 / 3 && chance < 1) { cpusMove = 'scissors';
+
+        moveofcpuImage.src = 'assets/scissors.png';
+    }
     return cpusMove;
 }
 
@@ -22,46 +27,40 @@ function playGame(playerMove) {
     const cpusMove = cpuMove();
 
     var result = '';
-    var moveofcpuImage = document.querySelector('.moveofcpu');
     var moveofplayerImage = document.querySelector('.moveofplayer');
 
     if (playerMove === 'scissors') {
         if (cpusMove === 'rock') {
             result = ('Looser! 👻');
-            moveofcpuImage.src = 'assets/rock.png';
+
         } else if (cpusMove === 'paper') {
             result = ('You Win! 👑');
-            moveofcpuImage.src = 'assets/paper.png';
-        } else if (cpusMove === 'scissors') {
-            result = ('Game Tied 💀');
-            moveofcpuImage.src = 'assets/scissors.png';
-        }
+
+        } else { result = ('Game Tied 💀'); }
+
         moveofplayerImage.src = 'assets/scissors.png';
 
     } else if (playerMove === 'paper') {
+
         if (cpusMove === 'rock') {
             result = ('You Win! 👑');
-            moveofcpuImage.src = 'assets/rock.png';
-        } else if (cpusMove === 'paper') {
+
+        } else if (cpusMove === playerMove) {
             result = ('Game Tied 💀');
-            moveofcpuImage.src = 'assets/paper.png';
-        } else if (cpusMove === 'scissors') {
+
+        } else {
             result = ('Looser! 👻');
-            moveofcpuImage.src = 'assets/scissors.png';
         }
         moveofplayerImage.src = 'assets/paper.png';
 
     } else if (playerMove === 'rock') {
-        if (cpusMove === 'rock') {
-            result = ('Game Tied 💀');
-            moveofcpuImage.src = 'assets/rock.png';
-        } else if (cpusMove === 'paper') {
-            result = ('Looser! 👻');
-            moveofcpuImage.src = 'assets/paper.png';
-        } else if (cpusMove === 'scissors') {
-            result = ('You Win! 👑');
-            moveofcpuImage.src = 'assets/scissors.png';
-        }
+
+        if (cpusMove === playerMove) {  result = ('Game Tied 💀');
+
+        } else if (cpusMove === 'paper') { result = ('Looser! 👻');
+
+        } else { result = ('You Win! 👑'); }
+
         moveofplayerImage.src = 'assets/rock.png';
     }
 
@@ -76,9 +75,7 @@ function playGame(playerMove) {
     }
 
     localStorage.setItem('score', JSON.stringify(score));
-
     updateScoreElement();
-
     document.querySelector('.result').innerHTML = result;
 }
 
@@ -92,5 +89,4 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     losses: 0,
     ties: 0,
 };
-
 updateScoreElement();
